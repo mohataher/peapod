@@ -54,6 +54,7 @@ import peapod.FramedVertex;
 
 import static org.hamcrest.Matchers.*;
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertThat;
 
 public class ShowcaseIClassicTest {
@@ -171,6 +172,12 @@ public class ShowcaseIClassicTest {
         // the graph is now empty
         assertEqualCount(0, graph.V(Software.class).count());
         // tada!
+    }
+
+    @Test
+    public void testTraversal(){
+        Person p=graph.V(Person.class).next();
+        assertNotNull(p);
     }
 
 
